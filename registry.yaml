@@ -1,0 +1,182 @@
+---
+# enablement-patterns registry
+#
+# Manifest of all patterns in this repo. Generated and maintained by hand.
+# Tools and indexers should treat this file as the source of truth for pattern
+# discovery. If a pattern exists on disk but not here, it is not yet ready.
+
+repo:
+  name: enablement-patterns
+  description: Repeatable deployment patterns for AI enablement engineers working in regulated enterprise contexts.
+  owner: Logan Freeman
+  contact: ljfreeman83@gmail.com
+  url: https://github.com/Stray-South/enablement-patterns
+  license_prose: CC-BY-4.0
+  license_code: Apache-2.0
+
+patterns:
+  - id: "01"
+    slug: four-stage-pipeline
+    title: The Four-Stage Engagement Pipeline
+    path: patterns/01-four-stage-pipeline/
+    status: draft
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - engagement
+      - process
+      - enterprise
+      - intake
+      - assessment
+      - handoff
+    summary: A repeatable Intake → Assessment → Enablement → Handoff pipeline for engaging any development team with AI adoption, with named entry criteria and stopping points.
+    field_report: true
+    runnable_artifact: true
+    eval: false
+
+  - id: "02"
+    slug: regulatory-translation
+    title: Translating Regulatory Requirements into Product Features
+    path: patterns/02-regulatory-translation/
+    status: draft
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - regulated-domain
+      - eu-ai-act
+      - colorado-sb-205
+      - compliance
+      - hitl
+    summary: Convert EU AI Act Article 14/15 and Colorado SB-205 obligations into named product features (signed receipts, kill switches, HITL gates) rather than separate compliance modules.
+    field_report: true
+    runnable_artifact: true
+    eval: true
+
+  - id: "03"
+    slug: ateam-bteam-review
+    title: A-Team / B-Team Multi-Agent Review Protocol
+    path: patterns/03-ateam-bteam-review/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - multi-agent
+      - quality-gate
+      - evals
+      - review-protocol
+    summary: A review-not-runtime protocol for using multiple AI agents adversarially. Claude A-team builds, Claude B-team verifies, GPT B-team does adversarial review. Quality gate, not orchestrator.
+
+  - id: "04"
+    slug: spec-driven-development
+    title: Spec-Driven Development with AI Partners
+    path: patterns/04-spec-driven-development/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - claude-code
+      - context-engineering
+      - workflow
+      - spec-first
+    summary: Writing specifications first, then having AI partners execute against them, with verification checkpoints in between. Companion to PLANS.md and CLAUDE.md conventions.
+
+  - id: "05"
+    slug: use-case-register
+    title: The AI Use Case Register
+    path: patterns/05-use-case-register/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - governance
+      - intake
+      - assessment
+      - risk-tiering
+    summary: A structured intake artifact for AI use cases with risk tier, sign-offs, status, and next review date. Ships as both Notion template and JSON-schema-validated CLI.
+
+  - id: "06"
+    slug: cognitive-load-protections
+    title: Cognitive Load Protections in Agent UX
+    path: patterns/06-cognitive-load-protections/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - agent-ux
+      - accessibility
+      - production
+      - interruption-recovery
+    summary: Structural constraints on agent UX that assume users lack continuous attention, working memory, or interruption recovery. The curb-cut effect, applied to agents.
+
+  - id: "07"
+    slug: audhd-first-defaults
+    title: AuDHD-First Defaults as Structural Constraint
+    path: patterns/07-audhd-first-defaults/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - design-philosophy
+      - accessibility
+      - meta
+      - structural-constraint
+    summary: The design-philosophy meta-pattern. AuDHD as a first-class structural constraint that disciplines every other pattern in this repo. No streaks, no loss-framing, no auto-advance, no auto-dismiss errors.
+
+  - id: "08"
+    slug: self-serve-doc-hubs
+    title: Self-Serve Documentation Hubs
+    path: patterns/08-self-serve-doc-hubs/
+    status: stubbed
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - handoff
+      - adoption
+      - measurement
+      - documentation
+    summary: How clients sustain enablement after Handoff. Reduce support load through measurable documentation systems. Includes the 40% support-reduction metric methodology.
+
+  - id: "09"
+    slug: eight-pillar-playbook
+    title: The Eight-Pillar AI Enablement Playbook
+    path: patterns/09-eight-pillar-playbook/
+    status: complete
+    date_added: 2026-05-12
+    date_updated: 2026-05-12
+    tags:
+      - strategy
+      - platform-architecture
+      - developer-experience
+      - governance
+      - measurement
+      - sustainment
+      - meta
+    summary: A synthesis of eight load-bearing pillars for AI enablement programs, drawn from a meta-analysis of 2021-2025 case studies across tech and regulated finance. Includes a runnable diagnostic checklist and cross-cutting failure mode table.
+    field_report: true
+    runnable_artifact: true
+    eval: false
+
+supporting_directories:
+  anti-patterns:
+    description: Short essays on AI enablement approaches that fail and why
+    status: planned
+
+  evals:
+    description: Calibrated LLM-as-judge implementations for patterns that admit one
+    status: planned
+
+  incidents:
+    description: Sanitized postmortems from real engagements
+    status: planned
+
+  runbooks:
+    description: Operational checklists, the Handoff artifacts
+    status: planned
+
+  mcp-servers:
+    description: Working MCP servers connecting Notion or Asana to Claude agents
+    status: planned
+
+  field-reports:
+    description: Long-form sanitized writeups of real engagements
+    status: planned
