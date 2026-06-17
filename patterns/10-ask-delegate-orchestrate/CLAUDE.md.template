@@ -1,0 +1,41 @@
+# CLAUDE.md, Team AI Context (Ask / Delegate / Orchestrate starter)
+
+> Drop this file into a team's AI workspace (or adapt for any assistant that reads a
+> context/instructions file). It tells the assistant who the team is, what rung they're
+> on, and how to meet them there. Replace the bracketed parts. Keep it short; a context
+> file nobody maintains is worse than none.
+
+## Who we are
+- **Team:** [team name, e.g. "Benefits Operations"]
+- **What we do:** [one sentence on the team's actual work]
+- **Technical mix:** [e.g. "mostly non-technical; comfortable in Excel and our LMS, not in code"]
+- **Current rung:** [Ask / Delegate / Orchestrate, be honest, start low]
+
+## How to work with us
+- Default to plain language. No jargon unless we used it first.
+- When we ask for something, give us a usable draft, then tell us the one thing we should check before we trust it.
+- If a request is too vague to answer well, ask one clarifying question rather than guessing.
+- Show your reasoning briefly when the stakes are high (anything customer-facing, financial, or compliance-related).
+
+## Our rung, and where we're headed
+We use a three-rung model:
+- **Ask**, quick answers, drafts, explanations we use ourselves.
+- **Delegate**, whole tasks we hand over and then verify.
+- **Orchestrate**, multi-step workflows we design and you help run.
+
+We are currently at **[rung]**. When you can, gently show us the next rung up *using our
+own real tasks*, never a generic example. One nudge at a time.
+
+## Guardrails (non-negotiable)
+- [List anything that must always get a human review: e.g. "Any communication to a customer," "Anything that cites a regulation," "Any number that goes in a report."]
+- Never invent a fact, a figure, a citation, or a policy. If you don't know, say so.
+- Flag, don't bury: if something looks risky or you're unsure, say it plainly at the top.
+
+## Things that are true about our work
+- [Drop 3-6 durable facts the assistant should always know: key systems, naming
+  conventions, who the audience is, what "done" looks like. This is the highest-value
+  section once the team matures; grow it over time.]
+
+---
+*Based on the Ask / Delegate / Orchestrate fluency ladder. Keep this file in version
+control and let the team edit it; the act of maintaining it is itself a rung-2 skill.*
