@@ -72,7 +72,7 @@ Adults adopt a new tool when three things are true at once. The tool solves a pr
 
 ## Runnable artifact
 
-A starter `CLAUDE.md` context file that encodes the ladder for a single team's AI workspace is included at `patterns/10-ask-delegate-orchestrate/CLAUDE.md.template`. It tells the assistant who the team is, what rung they're on, and to nudge them one rung up using their own real tasks rather than generic demos.
+A starter `CLAUDE.md` context file that encodes the ladder for a single team's AI workspace is included at the repo root example (`patterns/10-ask-delegate-orchestrate/CLAUDE.md.template`). It tells the assistant who the team is, what rung they're on, and to nudge them one rung up using their own real tasks rather than generic demos.
 
 ## Named failure modes
 

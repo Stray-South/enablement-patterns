@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Stray-South/enablement-patterns/patterns/01-four-stage-pipeline/pipeline-tracker.json",
+  "title": "Engagement Pipeline Tracker",
+  "description": "Schema for tracking an engagement through the Four-Stage Pipeline (Intake, Assessment, Enablement, Handoff).",
+  "type": "object",
+  "required": ["engagement_id", "team_name", "current_stage", "intake"],
+  "properties": {
+    "engagement_id": {
+      "type": "string",
+      "description": "Unique identifier for this engagement",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "team_name": {
+      "type": "string",
+      "description": "Human-readable name of the team being engaged"
+    },
+    "current_stage": {
+      "type": "string",
+      "enum": ["intake", "assessment", "enablement", "handoff", "paused", "stopped", "completed"],
+      "description": "Current pipeline stage. 'paused' and 'stopped' are explicit holding states."
+    },
+    "stage_history": {
+      "type": "array",
+      "description": "Audit trail of stage transitions",
+      "items": {
+        "type": "object",
+        "required": ["stage", "entered_at"],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": ["intake", "assessment", "enablement", "handoff", "paused", "stopped", "completed"]
+          },
+          "entered_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "exited_at": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "exit_reason": {
+            "type": ["string", "null"],
+            "description": "Free-text reason for exiting this stage, especially when stopping or pausing"
+          }
+        }
+      }
+    },
+    "intake": {
+      "type": "object",
+      "required": ["business_problem", "success_definition", "humans_affected", "failure_consequence", "risk_tier_preliminary"],
+      "properties": {
+        "business_problem": {
+          "type": "string",
+          "minLength": 20,
+          "description": "What business problem is this team trying to solve? Must be specific."
+        },
+        "success_definition": {
+          "type": "string",
+          "minLength": 20,
+          "description": "What does success look like in concrete, measurable terms?"
+        },
+        "humans_affected": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Who are the humans on the other end of this system?"
+        },
+        "failure_consequence": {
+          "type": "string",
+          "minLength": 10,
+          "description": "What happens if the AI gets it wrong?"
+        },
+        "risk_tier_preliminary": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "prohibited"]
+        },
+        "stakeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "role"],
+            "properties": {
+              "name": {"type": "string"},
+              "role": {"type": "string"},
+              "is_owner": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "assessment": {
+      "type": ["object", "null"],
+      "properties": {
+        "landscape_analysis_complete": {"type": "boolean"},
+        "risk_tier_confirmed": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "prohibited"]
+        },
+        "recommended_approach": {
+          "type": "string",
+          "enum": ["build", "buy", "partner", "do-nothing"]
+        },
+        "success_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric", "target"],
+            "properties": {
+              "metric": {"type": "string"},
+              "target": {"type": "string"},
+              "measurement_method": {"type": "string"}
+            }
+          }
+        },
+        "learning_plan_url": {"type": "string", "format": "uri"},
+        "owner_named": {"type": "boolean"},
+        "owner_time_allocated_hours_per_week": {"type": "number"}
+      }
+    },
+    "enablement": {
+      "type": ["object", "null"],
+      "properties": {
+        "pilot_started_at": {"type": "string", "format": "date"},
+        "checkpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "go_no_go"],
+            "properties": {
+              "date": {"type": "string", "format": "date"},
+              "go_no_go": {"type": "string", "enum": ["go", "no-go", "conditional"]},
+              "notes": {"type": "string"}
+            }
+          }
+        },
+        "metrics_achieved": {"type": "boolean"},
+        "team_can_operate_independently": {"type": "boolean"}
+      }
+    },
+    "handoff": {
+      "type": ["object", "null"],
+      "properties": {
+        "runbook_normal_ops_url": {"type": "string", "format": "uri"},
+        "runbook_failure_modes_url": {"type": "string", "format": "uri"},
+        "dashboard_url": {"type": "string", "format": "uri"},
+        "escalation_path_documented": {"type": "boolean"},
+        "operational_owner": {
+          "type": "object",
+          "required": ["name", "role"],
+          "properties": {
+            "name": {"type": "string"},
+            "role": {"type": "string"},
+            "is_ai_champion": {"type": "boolean", "description": "Flag if the owner is the AI champion rather than the operational owner. This is a yellow flag."}
+          }
+        },
+        "documentation_hub_url": {"type": "string", "format": "uri"},
+        "ninety_day_checkin_scheduled_for": {"type": "string", "format": "date"}
+      }
+    },
+    "failure_modes_triggered": {
+      "type": "array",
+      "description": "Audit trail of named failure modes that fired during this engagement",
+      "items": {
+        "type": "object",
+        "required": ["code", "fired_at"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "PIPELINE_FAILURE_INTAKE_NO_PROBLEM",
+              "PIPELINE_FAILURE_ASSESSMENT_NO_OWNER",
+              "PIPELINE_FAILURE_ASSESSMENT_RISK_TIER_MISMATCH",
+              "PIPELINE_FAILURE_ENABLEMENT_NO_ABSORPTION",
+              "PIPELINE_FAILURE_HANDOFF_WRONG_OWNER"
+            ]
+          },
+          "fired_at": {"type": "string", "format": "date-time"},
+          "resolution": {"type": "string"}
+        }
+      }
+    }
+  }
+}

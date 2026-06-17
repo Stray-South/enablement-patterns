@@ -19,7 +19,7 @@ patterns:
     slug: four-stage-pipeline
     title: The Four-Stage Engagement Pipeline
     path: patterns/01-four-stage-pipeline/
-    status: draft
+    status: complete
     date_added: 2026-05-12
     date_updated: 2026-05-12
     tags:
@@ -38,7 +38,7 @@ patterns:
     slug: regulatory-translation
     title: Translating Regulatory Requirements into Product Features
     path: patterns/02-regulatory-translation/
-    status: draft
+    status: complete
     date_added: 2026-05-12
     date_updated: 2026-05-12
     tags:
@@ -138,21 +138,40 @@ patterns:
 
   - id: "09"
     slug: eight-pillar-playbook
-    title: The Eight-Pillar AI Enablement Playbook
+    title: The 8-Pillar AI Platform Enablement Playbook
     path: patterns/09-eight-pillar-playbook/
-    status: complete
+    status: draft
     date_added: 2026-05-12
     date_updated: 2026-05-12
     tags:
       - strategy
       - platform-architecture
-      - developer-experience
       - governance
+      - developer-experience
       - measurement
       - sustainment
       - meta
-    summary: A synthesis of eight load-bearing pillars for AI enablement programs, drawn from a meta-analysis of 2021-2025 case studies across tech and regulated finance. Includes a runnable diagnostic checklist and cross-cutting failure mode table.
-    field_report: true
+    summary: Meta-analysis of 2021–2025 AI enablement programs distilled into eight pillars. Each pillar names what good looks like and the failure modes that kill initiatives before they scale. Evidence Ledger discipline throughout.
+    field_report: false
+    runnable_artifact: false
+    eval: false
+    evidence_ledger: true
+
+  - id: "10"
+    slug: ask-delegate-orchestrate
+    title: Ask / Delegate / Orchestrate, an AI Fluency Ladder
+    path: patterns/10-ask-delegate-orchestrate/
+    status: complete
+    date_added: 2026-06-17
+    date_updated: 2026-06-17
+    tags:
+      - fluency
+      - adoption
+      - individual
+      - andragogy
+      - change-management
+    summary: A three-rung individual fluency ladder (Ask, Delegate, Orchestrate) for moving a non-technical worker from smarter-search-box use to designing multi-step AI workflows. Individual-level companion to Pattern 09. Stands on gradual-release-of-responsibility and Anthropic's AI Fluency framework.
+    field_report: false
     runnable_artifact: true
     eval: false
 

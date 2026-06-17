@@ -10,20 +10,19 @@ Ship the spine of the repo plus the two lead patterns (Pattern 01: Four-Stage En
 
 | File | Status | Owner | Notes |
 |------|--------|-------|-------|
-| `README.md` | ✅ Done | Logan | Repo front page, 60–90 lines |
+| `README.md` | ✅ Done | Logan | Repo front page, 60-90 lines |
 | `CLAUDE.md` | ✅ Done | Logan | Agent instructions |
 | `PLANS.md` | ✅ Done | Logan | This file |
 | `registry.yaml` | ✅ Done | Logan | Pattern manifest |
 | `LICENSE` | ✅ Done | Logan | Apache 2.0 + CC BY 4.0 |
-| `patterns/01-four-stage-pipeline/` | ✅ Draft | Logan | Lead pattern, full content |
-| `patterns/02-regulatory-translation/` | ✅ Draft | Logan | Second lead pattern, full content |
+| `patterns/01-four-stage-pipeline/` | ✅ Complete | Logan | Full content + pipeline-tracker.json |
+| `patterns/02-regulatory-translation/` | ✅ Complete | Logan | Full content |
 | `patterns/03-ateam-bteam-review/` | 🚧 Stubbed | Logan | Anchor paragraph only |
 | `patterns/04-spec-driven-development/` | 🚧 Stubbed | Logan | Anchor paragraph only |
 | `patterns/05-use-case-register/` | 🚧 Stubbed | Logan | Anchor paragraph only |
 | `patterns/06-cognitive-load-protections/` | 🚧 Stubbed | Logan | Anchor paragraph only |
 | `patterns/07-audhd-first-defaults/` | 🚧 Stubbed | Logan | Anchor paragraph only |
 | `patterns/08-self-serve-doc-hubs/` | 🚧 Stubbed | Logan | Anchor paragraph only |
-| `patterns/09-eight-pillar-playbook/` | ✅ Complete | Logan | Full content, eight pillars, diagnostic artifact |
 | `mcp-servers/notion-server/` | 📋 Planned | Logan | Week 2 |
 | `evals/` | 📋 Planned | Logan | One calibrated judge per pattern that admits one |
 | Long-form essay on regulatory translation | 📋 Planned | Logan | Week 2, published on straysouth.com |
@@ -37,10 +36,10 @@ Ship the spine of the repo plus the two lead patterns (Pattern 01: Four-Stage En
 - [x] Write `README.md`, `CLAUDE.md`, `PLANS.md`, `registry.yaml`
 - [x] Draft Pattern 01: Four-Stage Engagement Pipeline (full content)
 - [x] Draft Pattern 02: Translating Regulatory Requirements into Product Features (full content)
-- [x] Stub Patterns 03–08 with anchor paragraphs
-- [ ] Loganize the prose in Patterns 01 and 02 (voice pass)
-- [ ] Add one diagram to Pattern 01 (the four-stage workflow)
-- [ ] Push to github.com/Stray-South/enablement-patterns
+- [x] Stub Patterns 03-08 with anchor paragraphs
+- [x] Voice pass on Patterns 01, 02, 09 (zero em-dashes, banned-term scan clean)
+- [x] Add diagram to Pattern 01 (the four-stage workflow)
+- [x] Push to github.com/Stray-South/enablement-patterns
 - [ ] Set GitHub topics: `ai-enablement`, `forward-deployed-engineer`, `developer-relations`, `llm-evals`, `agent-engineering`, `context-engineering`, `mcp-server`, `eu-ai-act`, `playbooks`, `runbooks`
 
 ## Week 2
@@ -60,7 +59,7 @@ Ship the spine of the repo plus the two lead patterns (Pattern 01: Four-Stage En
 - [ ] Draft Pattern 03: A-Team / B-Team Multi-Agent Review Protocol (full content)
 - [ ] Draft Pattern 04: Spec-Driven Development with AI Partners (full content)
 - [ ] Draft Pattern 05: The AI Use Case Register (full content)
-- [ ] Record 8–12 minute screen capture demo of the Four-Stage Pipeline in action
+- [ ] Record 8-12 minute screen capture demo of the Four-Stage Pipeline in action
 - [ ] Add captured Claude Code session to Pattern 04 as supporting artifact
 
 ## Week 4
@@ -74,7 +73,7 @@ Ship the spine of the repo plus the two lead patterns (Pattern 01: Four-Stage En
 
 ## Open questions
 
-1. **Sanitization protocol for field reports.** What level of detail can be shared about the regulated utility engagement without breaching contract? Likely: company names removed, employee counts kept (public information), specific platforms mentioned only at category level (not vendor names). Verify with engagement contract before publishing first field report.
+1. **Sanitization protocol for field reports.** What level of detail can be shared about the regulated-utility engagement without breaching contract? Likely: operating-company names removed, employee counts kept (public information), specific platforms mentioned only at category level (not vendor names). Verify with engagement contract before publishing first field report.
 
 2. **MCP server choice.** Notion or Asana? Notion has wider audience appeal; Asana shows project-management depth. Default: Notion. Revisit if Asana would surface a more distinctive demo.
 
