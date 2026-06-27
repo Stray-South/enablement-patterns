@@ -12,7 +12,7 @@ Hiring managers and customers cite this kind of writeup as the most useful artif
 
 ## Planned field reports
 
-- **Enterprise AI Enablement Architecture across Three Operating Subsidiaries** — The Southern Company engagement, sanitized per engagement contract. Likely covers: cross-OpCo landscape analysis, the Four-Stage Pipeline applied at scale, the specific challenges of running multiple Assessment-stage engagements in parallel, the artifacts that scaled and the artifacts that did not.
+- **Enterprise AI Enablement Architecture across Three Operating Subsidiaries** — A large regulated utility engagement, sanitized per engagement contract. Likely covers: cross-OpCo landscape analysis, the Four-Stage Pipeline applied at scale, the specific challenges of running multiple Assessment-stage engagements in parallel, the artifacts that scaled and the artifacts that did not.
 
 ## Sanitization
 
